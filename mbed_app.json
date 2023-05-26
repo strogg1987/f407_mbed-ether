@@ -1,0 +1,20 @@
+{
+  "config": {
+    "network-interface":{
+        "help": "options are ETHERNET, ETHERNET_WIZNET",
+        "value": "ETHERNET_WIZNET"
+    }
+},
+    "target_overrides": {
+      
+      "disco_f407vg": {
+        "target.c_lib": "small",
+        "target.components_add": ["SD","SDIO"],
+        "target.features_add": ["STORAGE"],
+        "target.device_has_add": ["SDIO", "SDIO_ASYNC"],
+        "target.printf_lib": "minimal-printf",
+        "platform.minimal-printf-enable-floating-point": false,
+        "platform.stdio-minimal-console-only": true
+      }
+    }
+}
