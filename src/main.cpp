@@ -2,7 +2,7 @@
 #include "WIZnetInterface.h"
 
 #define ECHO_SERVER_PORT   5005
-WIZnetInterface net(SPI_MOSI, SPI_MISO, SPI_SCK, SPI_CS, PB_9);
+WIZnetInterface net(PB_5, PB_4, PB_3, PB_7, PB_6);
 
 int main() {
     int remaining;
@@ -17,7 +17,6 @@ int main() {
 
     net.init();
     result = net.connect();
-
 
     TCPSocket socket;
     result = socket.open(&net);
